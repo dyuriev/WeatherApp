@@ -1,0 +1,1 @@
+http://api.openweathermap.org/data/2.5/weather?q=Saratov,ru&appid=a69aac0a41c68af7939bd9aa136278a2&units=metric
