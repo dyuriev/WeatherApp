@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-var WeatherMessage = ({location, temp}) => {
+let WeatherMessage = ({location, temp}) => {
   return (
     <h3 className="text-center">It's {Math.round(temp)} in {location}.</h3>
   );

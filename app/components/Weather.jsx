@@ -1,17 +1,17 @@
-var React = require('react');
-var WeatherForm = require('WeatherForm');
-var WeatherMessage = require('WeatherMessage');
-var openWeatherMap = require('openWeatherMap');
-var ErrorModal = require('ErrorModal');
+import React from 'react';
+import WeatherForm from 'WeatherForm';
+import WeatherMessage from 'WeatherMessage';
+import openWeatherMap from 'openWeatherMap';
+import ErrorModal from 'ErrorModal';
 
-var Weather = React.createClass({
+let Weather = React.createClass({
   getInitialState: function() {
     return {
       isLoading: false
     }
   },
   handleSearch: function(location) {
-    var that = this;
+    let that = this;
 
     this.setState({
       isLoading: true,
@@ -34,7 +34,7 @@ var Weather = React.createClass({
     });
   },
   componentDidMount: function() {
-    var location = this.props.location.query.location;
+    let location = this.props.location.query.location;
 
     if (location && location.length) {
       this.handleSearch(location);
@@ -42,7 +42,7 @@ var Weather = React.createClass({
     }
   },
   componentWillReceiveProps: function(newProps) {
-    var location = newProps.location.query.location;
+    let location = newProps.location.query.location;
 
     if (location && location.length) {
       this.handleSearch(location);
@@ -50,7 +50,7 @@ var Weather = React.createClass({
     }
   },
   render: function() {
-    var {isLoading, location, temp, errorMessage} = this.state;
+    let {isLoading, location, temp, errorMessage} = this.state;
 
     function renderMessage() {
       if (isLoading) {

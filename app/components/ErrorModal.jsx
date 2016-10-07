@@ -1,8 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var ReactDOMServer = require('react-dom/server');
+import React from 'react';
+import ReactDOM  from 'react-dom';
+import ReactDOMServer  from 'react-dom/server';
 
-var ErrorModal = React.createClass({
+let ErrorModal = React.createClass({
   getDefaultProps: function() {
     return {
       title: 'Error',
@@ -13,9 +13,9 @@ var ErrorModal = React.createClass({
     message: React.PropTypes.string.isRequired
   },
   componentDidMount: function() {
-    var {title, message} = this.props;
+    let {title, message} = this.props;
 
-    var popupMarkup = (
+    let popupMarkup = (
       <div id="error-modal" className="reveal tiny text-center" data-reveal="">
         <h4>{title}</h4>
         <p>{message}</p>
@@ -25,10 +25,10 @@ var ErrorModal = React.createClass({
       </div>
     );
 
-    var $popup = $(ReactDOMServer.renderToString(popupMarkup));
+    let $popup = $(ReactDOMServer.renderToString(popupMarkup));
     $(ReactDOM.findDOMNode(this)).html($popup);
 
-    var modal = new Foundation.Reveal($('#error-modal'));
+    let modal = new Foundation.Reveal($('#error-modal'));
     modal.open();
   },
   render: function() {

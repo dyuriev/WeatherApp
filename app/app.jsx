@@ -1,17 +1,22 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
-var Main = require('Main');
-var Weather = require('Weather');
-var About = require('About');
-var Examples = require('Examples');
+import React  from 'react';
+import ReactDOM  from 'react-dom';
+import {Route, Router, IndexRoute, hashHistory, useRouterHistory} from 'react-router';
+import {createHashHistory} from 'history';
+import Main from 'Main';
+import Weather  from 'Weather';
+import About from 'About';
+import Examples from 'Examples';
+
+const appHistory = useRouterHistory(createHashHistory)({
+  queryKey: false
+});
 
 require('style!css!foundation-sites/dist/foundation.min.css');
 require('style!css!sass!applicationStyles');
 $(document).foundation();
 
 ReactDOM.render(
-  <Router history={hashHistory}>
+  <Router history={appHistory}>
     <Route path="/" component={Main}>
       <Route path="about" component={About}/>
       <Route path="examples" component={Examples}/>

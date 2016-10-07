@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-var WeatherForm = React.createClass({
+let WeatherForm = React.createClass({
   onFormSubmit: function(e) {
     e.preventDefault();
 

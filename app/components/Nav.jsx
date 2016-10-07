@@ -1,8 +1,8 @@
-var React = require('react');
-var {Link, IndexLink} = require('react-router');
-var Weather = require('Weather');
+import React from 'react';
+import {Link, IndexLink} from 'react-router';
+import Weather from 'Weather';
 
-var Nav = React.createClass({
+let Nav = React.createClass({
   onSearch: function(e) {
     e.preventDefault();
     var location = $.trim(this.refs.navSearch.value);

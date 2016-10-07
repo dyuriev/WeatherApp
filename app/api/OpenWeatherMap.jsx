@@ -1,10 +1,10 @@
-var axios = require('axios');
+import axios from 'axios';
 
 const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=a69aac0a41c68af7939bd9aa136278a2&units=metric';
 
 module.exports = {
   getTemp: function(location) {
-    var encodedLocation = encodeURIComponent(location),
+    let encodedLocation = encodeURIComponent(location),
         requestUrl = `${OPEN_WEATHER_MAP_URL}&q=${encodedLocation}`;
 
         return axios.get(requestUrl).then(function(res) {
@@ -14,7 +14,7 @@ module.exports = {
             return res.data.main.temp;
           }
         }, function(e) {
-            throw new Error('Cannot fetch weather. Try again later');
+            throw new Error('Unable to fetch weather. Try again later');
         });
   }
 }

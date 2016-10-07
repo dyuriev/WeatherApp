@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-var About = (props) => {
+let About = (props) => {
   return (
     <div>
       <h1 className="text-center">About</h1>
